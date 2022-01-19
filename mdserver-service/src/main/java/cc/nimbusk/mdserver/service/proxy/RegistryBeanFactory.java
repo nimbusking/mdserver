@@ -1,6 +1,8 @@
 package cc.nimbusk.mdserver.service.proxy;
 
+import cc.nimbusk.mdserver.service.common.RegistryService;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
@@ -16,13 +18,15 @@ import org.springframework.stereotype.Component;
  * @date 2022/1/17
  */
 @Component
-public class RegistryBeanService implements ApplicationContextAware, BeanDefinitionRegistryPostProcessor {
+public class RegistryBeanFactory implements ApplicationContextAware, BeanDefinitionRegistryPostProcessor {
 
     private ApplicationContext applicationContext;
+    private RegistryService registryService;
 
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry beanDefinitionRegistry) throws BeansException {
-        // todo registry bean to spring framework dynamically
+        // registry bean to spring framework dynamically
+        registryService.init(beanDefinitionRegistry);
     }
 
     @Override
@@ -33,5 +37,10 @@ public class RegistryBeanService implements ApplicationContextAware, BeanDefinit
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
+    }
+
+    @Autowired
+    public void setRegistryService(RegistryService registryService) {
+        this.registryService = registryService;
     }
 }
