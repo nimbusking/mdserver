@@ -13,7 +13,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.2</version>
+        <version>2.1.18.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>cc.nimbusk</groupId>
@@ -24,12 +24,39 @@
     <properties>
         <java.version>1.8</java.version>
         <commons.io.version>2.11.0</commons.io.version>
-        <spring.boot.version>2.6.2</spring.boot.version>
+        <spring.boot.version>2.1.18.RELEASE</spring.boot.version>
         <lombok.version>1.18.22</lombok.version>
         <commons.lang.version>3.12.0</commons.lang.version>
+        <mdserver.version>0.0.1-SNAPSHOT</mdserver.version>
     </properties>
     <dependencyManagement>
         <dependencies>
+            <!-- mdserver -->
+            <dependency>
+                <groupId>cc.nimbusk</groupId>
+                <artifactId>mdserver-runner</artifactId>
+                <version>${mdserver.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cc.nimbusk</groupId>
+                <artifactId>mdserver-service</artifactId>
+                <version>${mdserver.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cc.nimbusk</groupId>
+                <artifactId>mdserver-test</artifactId>
+                <version>${mdserver.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cc.nimbusk</groupId>
+                <artifactId>mdserver-util</artifactId>
+                <version>${mdserver.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cc.nimbusk</groupId>
+                <artifactId>mdserver-web</artifactId>
+                <version>${mdserver.version}</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-actuator</artifactId>

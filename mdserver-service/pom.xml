@@ -25,8 +25,8 @@
             <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>cc.nimbusk</groupId>
+            <artifactId>mdserver-util</artifactId>
         </dependency>
     </dependencies>
 
